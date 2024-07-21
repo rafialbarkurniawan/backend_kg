@@ -20,7 +20,7 @@ router.get("/users", (req: Request, res: Response) => {
     success: true,
     message: "Berhasil mendapatkan data user",
     data: {
-      users,
+      users
     },
   });
 });
@@ -34,7 +34,7 @@ router.post("/users", (req: Request, res: Response) => {
     res.status(400).json({
       succcess: false,
       message: "Email sudah terdaftar",
-      data: {},
+      data: {}
     });
   }
 
@@ -47,7 +47,7 @@ router.post("/users", (req: Request, res: Response) => {
     success: true,
     message: "User berhasil ditambahkan",
     data: {
-      user,
+      user
     },
   });
 });
@@ -62,7 +62,7 @@ router.put("/users/:email", (req: Request, res: Response) => {
     res.status(404).json({
       success: false,
       message: "User tidak ditemukan",
-      data: {},
+      data: {}
     });
   }
 
@@ -75,7 +75,7 @@ router.put("/users/:email", (req: Request, res: Response) => {
     success: true,
     message: "User berhasil diperhbarui",
     data: {
-      user,
+      user
     },
   });
 });
@@ -89,7 +89,7 @@ router.delete("/users/:email", (req: Request, res: Response) => {
     res.status(404).json({
       success: false,
       message: "User tidak ditemukan",
-      data: {},
+      data: {}
     });
   }
 
@@ -98,6 +98,8 @@ router.delete("/users/:email", (req: Request, res: Response) => {
   res.status(200).json({
     success: true,
     message: "User berhasil dihapus",
-    data: {},
+    data: {}
   });
 });
+
+export default router
